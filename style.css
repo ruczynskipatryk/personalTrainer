@@ -1,37 +1,165 @@
+/* Global settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: rgb(246, 152, 168);
+  --pink-dark: rgb(185, 111, 123);
+}
+
 body {
-  background-color: black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: rgb(255, 255, 255);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#nav-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: rgb(0, 0, 0);
-  text-align: center;
+/* Nav styling */
+
+.logo {
+  width: 4em;
+}
+
+nav {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 50px;
+  height: 8vh;
+  padding: 2rem;
+  position: relative;
 }
 
-#nav-bar a {
-  color: pink;
+ul {
+  list-style-type: none;
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+/* Nav buttons styling */
+
+a {
   text-decoration: none;
-  transition: 1s;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  padding: 0.2em;
+  color: var(--pink);
 }
 
-#nav-bar a:hover {
-  opacity: 0.7;
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  background-color: var(--pink-dark);
+  height: 0.15em;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+  width: 0%;
 }
 
-#nav-bar a:active {
-  opacity: 0.4;
+a:hover::after {
+  width: 100%;
+}
+
+.nav-item:hover {
+  color: var(--pink);
+}
+
+/* Burger styling */
+
+.burger {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}
+
+.line {
+  width: 3em;
+  height: 0.3em;
+  background: var(--pink);
+  margin: 0.7em;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+/* maain styling */
+
+#main {
+  height: 500px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 50px;
 }
 
 h1 {
-  color: palegreen;
+  color: var(--pink);
+  font-size: 80px;
+}
+
+h1 span {
+  color: black;
 }
 
 h2 {
-  color: palegreen;
+  font-size: 20px;
+}
+
+/* Media queries for nav and main */
+
+@media only screen and (max-width: 1024px) {
+  .burger {
+    display: block;
+    transition: 0.7s ease-in-out;
+  }
+
+  .burger:hover {
+    background-color: rgb(185, 111, 123);
+    border-radius: 10px;
+  }
+
+  ul {
+    position: absolute;
+    right: 0;
+    top: 8vh;
+    background-color: var(--pink-dark);
+    height: 92vh;
+    flex-direction: column;
+    text-align: center;
+    transform: translate(100%);
+  }
+
+  ul.active {
+    transform: translate(0%);
+    transition: 1s;
+  }
+
+  a {
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  #main {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    transition: 2s;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  ul {
+    width: 100%;
+  }
 }

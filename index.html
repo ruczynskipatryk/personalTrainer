@@ -16,16 +16,25 @@
   </head>
   <body>
     <!--Navigation with links to specific page elements. -->
-    <div id="nav-bar">
-      <a href="index.html#main" class="nav-item">Main</a>
-      <a href="index.html#about" class="nav-item">About</a>
-      <a href="index.html#offer" class="nav-item">Offer</a>
-      <a href="index.html#contact" class="nav-item">Contact</a>
-    </div>
+    <nav>
+      <img class="logo" src="logo.jpg" alt="Logo Trenerki Personalnej" />
+      <ul>
+        <li><a href="index.html#main" class="nav-item">Strona główna</a></li>
+        <li><a href="index.html#about" class="nav-item">O mnie</a></li>
+        <li><a href="index.html#offer" class="nav-item">Oferta </a></li>
+        <li><a href="index.html#contact" class="nav-item">Kontakt</a></li>
+      </ul>
+
+      <button class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </button>
+    </nav>
     <!--Section header with photo and main heading. -->
     <header id="main">
-      <h1>Personal Trainer</h1>
-      <h2>Change your life for better with my help.</h2>
+      <h1>Trenerka <span>Kinia</span></h1>
+      <h2>Zmień swoje zdrowie na lepsze z moja pomoca</h2>
     </header>
     <!--Section about with all important infromations. -->
     <div id="about"></div>
@@ -33,5 +42,6 @@
     <div id="offer"></div>
     <!--Section footer with contact and links to all social media sites.-->
     <footer id="contact"></footer>
+    <script src="app.js"></script>
   </body>
 </html>
