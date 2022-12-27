@@ -19,7 +19,9 @@ body {
 /* Nav styling */
 
 .logo {
-  width: 4em;
+  margin-top: 20px;
+  width: 5em;
+  margin-bottom: 20px;
 }
 
 nav {
@@ -32,7 +34,7 @@ nav {
   position: relative;
 }
 
-ul {
+nav ul {
   list-style-type: none;
   display: flex;
   width: 50%;
@@ -41,7 +43,7 @@ ul {
 
 /* Nav buttons styling */
 
-a {
+nav a {
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
@@ -50,7 +52,7 @@ a {
   color: var(--pink);
 }
 
-a::after {
+nav a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -106,14 +108,26 @@ a:hover::after {
 h1 {
   color: var(--pink);
   font-size: 80px;
+  transition: 2s ease-in-out;
+}
+
+h1:hover {
+  color: black;
+  transition: 0.5s;
 }
 
 h1 span {
   color: black;
 }
 
+h1:hover span {
+  color: var(--pink);
+  transition: 0.5s;
+}
+
 h2 {
   font-size: 20px;
+  transition: 2s ease-in-out;
 }
 
 /* Media queries for nav and main */
@@ -129,7 +143,7 @@ h2 {
     border-radius: 10px;
   }
 
-  ul {
+  nav ul {
     position: absolute;
     right: 0;
     top: 8vh;
@@ -140,12 +154,12 @@ h2 {
     transform: translate(100%);
   }
 
-  ul.active {
+  nav ul.active {
     transform: translate(0%);
     transition: 1s;
   }
 
-  a {
+  nav a {
     color: rgb(255, 255, 255);
     font-size: 2.5rem;
     letter-spacing: 2px;
@@ -161,7 +175,7 @@ h2 {
 }
 
 @media only screen and (max-width: 760px) {
-  ul {
+  nav ul {
     width: 100%;
   }
 }
@@ -178,6 +192,7 @@ h2 {
 /* about section styling */
 #about {
   height: 400px;
+  margin-bottom: 200px;
 }
 h3 {
   text-align: center;
@@ -188,4 +203,167 @@ h3 {
 .about-describe {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.about-describe p {
+  margin-right: 10px;
+  border: 2px solid var(--pink-dark);
+  border-radius: 2px;
+}
+
+/* about media queries */
+
+@media only screen and (max-width: 800px) {
+  .about-describe {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-describe p {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+/* offer section styling */
+
+#offer {
+  height: 100vh;
+}
+
+h4 {
+  color: var(--pink-dark);
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  cursor: default;
+}
+
+.offer-cards {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background-color: rgb(177, 87, 127);
+  width: 250px;
+  height: 450px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: var(--pink);
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+.card-image {
+  height: 50px;
+  margin: 10px 0px 10px 0px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  color: var(--pink);
+}
+
+.card:hover .card-image {
+  color: var(--pink-dark);
+}
+
+.card h5 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  width: 150px;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.card button {
+  background-color: var(--pink);
+  border: none;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 1s ease-in-out;
+  display: flex;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.card:hover .card-button {
+  background-color: var(--pink-dark);
+}
+
+.card:hover .card-image {
+  transform: translateY(-7px);
+  transition: 1s;
+}
+
+/* offer media queries */
+
+@media only screen and (max-width: 800px) {
+  #offer {
+    height: 1500px;
+  }
+  .offer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+/* Footer styling */
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background: var(--pink);
+  padding: 20px 50px;
+}
+
+h6 {
+  color: var(--pink-dark);
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  cursor: default;
+}
+
+footer .social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+footer .social-icon li {
+  list-style: none;
+}
+
+footer .social-icon li a {
+  font-size: 2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.7s;
+}
+
+footer .social-icon li a:hover {
+  transform: translateY(-10px);
+  color: var(--pink-dark);
 }
